@@ -25,7 +25,7 @@ public class NikuFire : MonoBehaviour
         
     }
 
-    private void OnCollision(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (level < fireLevel.KOGE)
         {
@@ -59,7 +59,7 @@ public class NikuFire : MonoBehaviour
 
         if (level == fireLevel.KOGE)
         {
-            GetComponent<MeshRenderer>().material = materialArray[1];
+            GetComponent<MeshRenderer>().material = materialArray[2];
         }
 
     }
