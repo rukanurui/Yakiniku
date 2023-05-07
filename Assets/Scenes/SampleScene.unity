@@ -559,7 +559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858014864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60bf3161ed6f7b74c90379adfa71da25, type: 3}
   m_Name: 
@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 2077531176}
   - component: {fileID: 2077531175}
   - component: {fileID: 2077531180}
+  - component: {fileID: 2077531181}
   m_Layer: 0
   m_Name: Yasai
   m_TagString: Untagged
@@ -816,3 +817,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &2077531181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077531174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7c6ebae70ff7340ab693104c5b437a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialArray:
+  - {fileID: 2100000, guid: 698bacb25c900bd45be265f0aef330eb, type: 2}
+  - {fileID: 2100000, guid: 28d371ef80337cd4dbc737e6b13d3105, type: 2}
+  - {fileID: 2100000, guid: f5584a3f966ded84cb743af5c1d95c24, type: 2}
