@@ -6,7 +6,7 @@ public class NikuFire : MonoBehaviour
 {
 
     [SerializeField] Material[] materialArray = new Material[3];
-    enum fireLevel
+    public enum fireLevel
     {
         NONE,
         RARE,
@@ -15,7 +15,7 @@ public class NikuFire : MonoBehaviour
     }
     float firecount;
 
-    fireLevel level = fireLevel.NONE;
+    public fireLevel level = fireLevel.NONE;
 
     string Ami;//–Ô‚©‚Ç‚¤‚©‚Ì”äŠr
 

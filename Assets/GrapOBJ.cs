@@ -6,6 +6,7 @@ public class GrapOBJ : MonoBehaviour
 {
 
     BoxCollider BoxCol;
+    bool grapflag = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +16,37 @@ public class GrapOBJ : MonoBehaviour
     // Update is called once per frame
     void OnMouseDrag()
     {
-        BoxCol.enabled = false;
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if(grapflag==true)
         {
-            transform.position = new Vector3(hit.point.x, hit.point.y+0.5f, hit.point.z);
-            Debug.Log(hit.collider.name);
+            BoxCol.enabled = false;
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                transform.position = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
+                //Debug.Log(hit.collider.name);
+            }
         }
+       
+    }
+
+    private void Update()
+    {
+        Eat sara = GetComponent<Eat>();
+        //GameObject obj = GameObject.Find("Sara");
+        //sara = obj.GetComponent<Eat>();
+
+        //éMÇÃè„Ç…Ç»Ç¢Ç∆Ç´ÇæÇØèEÇ¶ÇÈ
+        if (sara.Saraflag == true)
+        {
+            grapflag = false;
+        }
+
     }
 
     void OnMouseUp()
     {
         BoxCol.enabled = true;
     }
+
 }
