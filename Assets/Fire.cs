@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YasaiFire : MonoBehaviour
+public class Fire : MonoBehaviour
 {
+
     [SerializeField] Material[] materialArray = new Material[3];
-    enum fireLevel
+    public enum fireLevel
     {
         NONE,
         RARE,
@@ -14,14 +15,14 @@ public class YasaiFire : MonoBehaviour
     }
     float firecount;
 
-    fireLevel level = fireLevel.NONE;
+    public fireLevel level = fireLevel.NONE;
 
     string Ami;//ñ‘Ç©Ç«Ç§Ç©ÇÃî‰är
 
     // Start is called before the first frame update
     void Start()//èâä˙âª
     {
-
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -46,12 +47,12 @@ public class YasaiFire : MonoBehaviour
     void Update()//çXêV
     {
 
-        if (level == fireLevel.NONE)
+        if(level==fireLevel.NONE)
         {
             GetComponent<MeshRenderer>().material = materialArray[0];
         }
 
-        if (level == fireLevel.WELLDONE)
+        if (level== fireLevel.WELLDONE)
         {
             GetComponent<MeshRenderer>().material = materialArray[1];
         }

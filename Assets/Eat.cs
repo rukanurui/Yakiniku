@@ -14,11 +14,11 @@ public class Eat : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        NikuFire firelevel = GetComponent<NikuFire>();
+        Fire firelevel = GetComponent<Fire>();
 
        if (other.gameObject.tag == "Sara")
       {
-          if(firelevel.level>=NikuFire.fireLevel.WELLDONE)
+          if(firelevel.level>=Fire.fireLevel.WELLDONE)
           Saraflag = true;
       }
 
