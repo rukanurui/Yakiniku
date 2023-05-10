@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class Eat : MonoBehaviour
 {
-
+    // public static SphereScript instance;
+    public int point;
     public bool Saraflag = false;
     // Start is called before the first frame update
+
+    public static Eat instance;
+    
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         
@@ -29,6 +42,7 @@ public class Eat : MonoBehaviour
         //M‚Ìã‚Å¶ƒNƒŠƒbƒN‚ğ‰Ÿ‚µ‚½‚ç
         if (Saraflag == true)
         {
+            point += 25;
             Destroy(gameObject);
         }
     }
