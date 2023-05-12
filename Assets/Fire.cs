@@ -19,6 +19,8 @@ public class Fire : MonoBehaviour
 
     string Ami;//–Ô‚©‚Ç‚¤‚©‚Ì”äŠr
 
+    public GameObject ParticleKemuri;
+
     // Start is called before the first frame update
     void Start()//‰Šú‰»
     {
@@ -32,6 +34,11 @@ public class Fire : MonoBehaviour
             if (other.gameObject.tag == "Ami")
             {
                 firecount += 1.0f;
+                Instantiate(ParticleKemuri,this.transform.position,Quaternion.identity);
+            }
+            else
+            {
+                //ParticleKemuri.SetActive(false);
             }
 
             if (firecount >= 240)
