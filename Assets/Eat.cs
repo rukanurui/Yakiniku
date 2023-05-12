@@ -5,12 +5,13 @@ using UnityEngine;
 public class Eat : MonoBehaviour
 {
     // public static SphereScript instance;
-    public int point;
+    //public int point;
     public bool Saraflag = false;
     // Start is called before the first frame update
 
     public static Eat instance;
-    
+    public bool GetFlag = false;
+    public string name;
 
     public void Awake()
     {
@@ -42,7 +43,15 @@ public class Eat : MonoBehaviour
         //皿の上で左クリックを押したら
         if (Saraflag == true)
         {
-            Destroy(gameObject);
+            GetFlag = true;
+            if (GetFlag == true)
+            {
+                name = gameObject.tag;
+                Gage.instance.ScoreUpdate(name);//スコア加算 引数にtagいれれば判別できる
+                Destroy(gameObject);
+                Saraflag = false;
+                
+            }
         }
     }
 
@@ -51,4 +60,5 @@ public class Eat : MonoBehaviour
     {
         
     }
+
 }
