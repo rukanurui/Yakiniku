@@ -24,7 +24,7 @@ public class GrapOBJ : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 transform.position = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
-                //Debug.Log(hit.collider.name);
+                Debug.Log(hit.collider.tag);
             }
         }
        

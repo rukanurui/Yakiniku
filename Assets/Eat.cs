@@ -29,11 +29,11 @@ public class Eat : MonoBehaviour
     {
         Fire firelevel = GetComponent<Fire>();
 
-       if (other.gameObject.tag == "Sara")
-      {
-          if(firelevel.level>=Fire.fireLevel.WELLDONE)
-          Saraflag = true;
-      }
+        if (other.gameObject.tag == "Sara")
+        {
+            if (firelevel.level >= Fire.fireLevel.WELLDONE)
+                Saraflag = true;
+        }
 
     }
 
@@ -42,7 +42,6 @@ public class Eat : MonoBehaviour
         //M‚Ìã‚Å¶ƒNƒŠƒbƒN‚ğ‰Ÿ‚µ‚½‚ç
         if (Saraflag == true)
         {
-            point += 25;
             Destroy(gameObject);
         }
     }
