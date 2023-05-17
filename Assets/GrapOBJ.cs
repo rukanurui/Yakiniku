@@ -23,7 +23,7 @@ public class GrapOBJ : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                transform.position = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
+                transform.position = new Vector3(hit.point.x, 2, hit.point.z);
                 Debug.Log(hit.collider.tag);
             }
         }
