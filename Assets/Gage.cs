@@ -70,20 +70,32 @@ public class Gage : MonoBehaviour
         //}
 
     }
-    public void ScoreUpdate(string name)
+    public void ScoreUpdate(string name,int firelevel)
     {
         //tagの中に含まれる対応した名前でスコア変化
-        if(name.Contains("Karubi"))
+        if(name.Contains("Karubi") && firelevel == 2)//肉　ウェルダン
         {
             point += 50;
             happyPoint += 25;
             healthPoint -= 10;
         }
-        else if(name.Contains("kyabetu"))
+        else if(name.Contains("Karubi") && firelevel == 3)//肉 焦げ肉
+        {
+            point += 25;
+            happyPoint += 5;
+            healthPoint -= 20;
+        }
+        else if(name.Contains("kyabetu") && firelevel == 2)//野菜　ウェルダン
         {
             point += 25;
             happyPoint -= 10;
             healthPoint += 25;
+        }
+        else if (name.Contains("kyabetu") && firelevel == 3)//野菜　焦げ
+        {
+            point += 15;
+            happyPoint -= 20;
+            healthPoint += 15;
         }
         else
         {

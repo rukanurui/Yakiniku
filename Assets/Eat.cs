@@ -12,6 +12,7 @@ public class Eat : MonoBehaviour
     public static Eat instance;
     public bool GetFlag = false;
     public string name;
+    public int level;
 
     public void Awake()
     {
@@ -34,6 +35,7 @@ public class Eat : MonoBehaviour
         {
             if (firelevel.level >= Fire.fireLevel.WELLDONE)
                 Saraflag = true;
+                level = (int)firelevel.level;
         }
 
     }
@@ -47,7 +49,7 @@ public class Eat : MonoBehaviour
             if (GetFlag == true)
             {
                 name = gameObject.tag;
-                Gage.instance.ScoreUpdate(name);//スコア加算 引数にtagいれれば判別できる
+                Gage.instance.ScoreUpdate(name, level);//スコア加算 引数にtagいれれば判別できる
                 Destroy(gameObject);
                 Saraflag = false;
                 
