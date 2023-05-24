@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 79, y: 112.7}
+  m_AnchoredPosition: {x: 80.7, y: 62.8}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823568696
@@ -1082,7 +1082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 81.8, y: 41.6}
+  m_AnchoredPosition: {x: 81.8, y: 21.2}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276788633
@@ -1171,7 +1171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 82, y: 78}
+  m_AnchoredPosition: {x: 82, y: 41.2}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345857031
@@ -1923,6 +1923,7 @@ MonoBehaviour:
   Saraflag: 0
   GetFlag: 0
   name: 
+  level: 0
 --- !u!114 &1854223389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,6 +2145,7 @@ MonoBehaviour:
   Saraflag: 0
   GetFlag: 0
   name: 
+  level: 0
 --- !u!65 &1858014873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2428,6 +2430,7 @@ MonoBehaviour:
   Saraflag: 0
   GetFlag: 0
   name: 
+  level: 0
 --- !u!65 &2077531183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2470,6 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cd7105514d75349a87624c71dca7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeOut: 0
 --- !u!4 &2121815857
 Transform:
   m_ObjectHideFlags: 0
