@@ -112,8 +112,6 @@ public class Gage : MonoBehaviour
     void Update()
     {
 
-       
-
         currentHp = point;
 
         point -= 0.01f;
