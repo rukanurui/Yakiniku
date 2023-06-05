@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeLimit1 : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class TimeLimit1 : MonoBehaviour
         if (countdownSeconds <= 0)
         {
             // 0•b‚É‚È‚Á‚½‚Æ‚«‚Ìˆ—
+            SceneManager.LoadScene("result");
         }
     }
 }
