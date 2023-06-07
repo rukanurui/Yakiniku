@@ -11,6 +11,13 @@ public class TimeLimit1 : MonoBehaviour
     private float countdownSeconds;
     private Text timeText;
 
+    public static float score = 0;
+
+    public static float GetScore()
+    {
+        return score;
+    }
+
     private void Start()
     {
         timeText = GetComponent<Text>();
@@ -22,6 +29,8 @@ public class TimeLimit1 : MonoBehaviour
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
+
+        score = 300.0f - countdownSeconds;
 
         if (countdownSeconds <= 0)
         {
