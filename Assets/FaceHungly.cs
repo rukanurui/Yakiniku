@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//UIégÇ§Ç∆Ç´ÇÕñYÇÍÇ∏Ç…ÅB
 using UnityEngine.UI;
 
-public class FaceColor : MonoBehaviour
+public class FaceHungly : MonoBehaviour
 {
-
     [SerializeField] Sprite[] SpriteArray = new Sprite[3];
+    public Image image;
 
     public enum faceLevel
     {
@@ -27,6 +26,7 @@ public class FaceColor : MonoBehaviour
     {
         value = GameObject.Find("éM");
         get = value.GetComponent<Gage>();
+        image = this.GetComponent<Image>();
     }
 
 
@@ -34,7 +34,7 @@ public class FaceColor : MonoBehaviour
     void Update()
     {
 
-        numvalue = get.healthSlider.value;
+        numvalue = get.slider.value;
 
         if (numvalue >= 0.6)
         {
@@ -53,17 +53,17 @@ public class FaceColor : MonoBehaviour
 
         if (level == faceLevel.Full)
         {
-            GetComponent<SpriteRenderer>().sprite = SpriteArray[0];
+            image.sprite = SpriteArray[0];
         }
 
         if (level == faceLevel.Middle)
         {
-            GetComponent<SpriteRenderer>().sprite = SpriteArray[1];
+            image.sprite = SpriteArray[1];
         }
 
         if (level == faceLevel.Empty)
         {
-            GetComponent<SpriteRenderer>().sprite = SpriteArray[2];
+            image.sprite = SpriteArray[2];
         }
 
     }
