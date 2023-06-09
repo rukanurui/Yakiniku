@@ -4,6 +4,8 @@ using UnityEngine;
 
 //UI使うときは忘れずに。
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Gage : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class Gage : MonoBehaviour
     public float healthPoint;
 
     public static float score = 0;
+    public static int pointLostTime = 0;
    // public string name;
 
     public void Awake()
@@ -57,6 +60,7 @@ public class Gage : MonoBehaviour
         currentHp = 50;
         happyHp = 50;
         healthHp = 50;
+        pointLostTime = 0;
         Debug.Log("Start currentHp : " + currentHp);
     }
 
@@ -131,6 +135,21 @@ public class Gage : MonoBehaviour
 
     void Update()
     {
+        // 空腹が０だとカウントダウン始まる
+        if(point<=0)
+        {
+            pointLostTime += 1;
+            //カウントダウンが終わるとゲーム終了
+            if (pointLostTime > 180)
+            {
+                //空腹が0かつ一定時間立った時
+                SceneManager.LoadScene("result");
+            }
+        }
+        else
+        {
+            pointLostTime = 0;
+        }
 
         currentHp = point;
 
