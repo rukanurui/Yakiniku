@@ -15,7 +15,7 @@ public class Gage : MonoBehaviour
     //最低HP
     int minHp = 0;
 
-    float currentHp;
+    public float currentHp;
     float happyHp;
     float healthHp;
     //public Eat eat;
@@ -64,28 +64,11 @@ public class Gage : MonoBehaviour
         Debug.Log("Start currentHp : " + currentHp);
     }
 
-    private void OnMouseDown()
-    {
-        //皿の上で左クリック押されたら
-        //ここでどうやって押された種類のを判定するか
-        //RaycastHit hit;
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
-        //if (Physics.Raycast(ray, out hit))
-        //{
-        //    a = hit.collider.tag;
-        //    if(a.Contains("Food"))
-        //    {
-        //        point += 25;
-        //    }
-            
-            
-        //    Debug.Log(hit.collider.tag);
-        //}
 
-    }
     public void ScoreUpdate(string name,int firelevel)
     {
+
+        //幸福などのゲージにも制限を付ける
         //tagの中に含まれる対応した名前でスコア変化
         if(name.Contains("Karubi") && firelevel == 2)//肉　ウェルダン
         {
@@ -133,6 +116,14 @@ public class Gage : MonoBehaviour
     }
 
 
+    public void OnClickSquatButton()
+    {
+        //ボタン押したらステータスを下げる
+        point -= 1.0f;
+        currentHp -= 1.0f;
+    }
+
+
     void Update()
     {
         // 空腹が０だとカウントダウン始まる
@@ -150,6 +141,8 @@ public class Gage : MonoBehaviour
         {
             pointLostTime = 0;
         }
+
+
 
         currentHp = point;
 
