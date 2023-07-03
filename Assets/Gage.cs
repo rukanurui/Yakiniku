@@ -18,16 +18,21 @@ public class Gage : MonoBehaviour
     public float currentHp;
     float happyHp;
     float healthHp;
+    public float cigarettesHp;
+
     //public Eat eat;
     //Sliderを入れる
     public Slider slider;
     public Slider happySlider;
     public Slider healthSlider;
+    public Slider cigarettesSlider;
 
     public static Gage instance;
     public float point;
     public float happyPoint;
     public float healthPoint;
+    public float cigarettesPoint;
+
 
     public static float score = 0;
     public static int pointLostTime = 0;
@@ -95,6 +100,70 @@ public class Gage : MonoBehaviour
             score += 3;
         }
         else if (name.Contains("kyabetu") && firelevel == 3)//野菜　焦げ
+        {
+            point += 15;
+            happyPoint -= 20;
+            healthPoint += 15;
+
+            score += 3;
+        }
+        else if (name.Contains("kabocha") && firelevel == 2)//かぼちゃ　ウェルダン
+        {
+            point += 25;
+            happyPoint -= 10;
+            healthPoint += 25;
+
+            score += 3;
+        }
+        else if (name.Contains("kabocha") && firelevel == 3)//かぼちゃ　焦げ
+        {
+            point += 15;
+            happyPoint -= 20;
+            healthPoint += 15;
+
+            score += 3;
+        }
+        else if (name.Contains("pi-man") && firelevel == 2)//ぴーまん　ウェルダン
+        {
+            point += 25;
+            happyPoint -= 10;
+            healthPoint += 25;
+
+            score += 3;
+        }
+        else if (name.Contains("pi-man") && firelevel == 3)//ぴーまん　焦げ
+        {
+            point += 15;
+            happyPoint -= 20;
+            healthPoint += 15;
+
+            score += 3;
+        }
+        else if (name.Contains("horumon") && firelevel == 2)//ホルモン　ウェルダン
+        {
+            point += 25;
+            happyPoint -= 10;
+            healthPoint += 25;
+
+            score += 3;
+        }
+        else if (name.Contains("horumon") && firelevel == 3)//ホルモン　焦げ
+        {
+            point += 15;
+            happyPoint -= 20;
+            healthPoint += 15;
+
+            score += 3;
+        }
+        else if (name.Contains("tori") && firelevel == 2)//鳥　ウェルダン
+        {
+            point += 25;
+            happyPoint -= 10;
+            healthPoint += 25;
+
+            score += 3;
+        }
+        else if (name.Contains("tori") && firelevel == 3)//鳥　焦げ
         {
             point += 15;
             happyPoint -= 20;
@@ -178,14 +247,25 @@ public class Gage : MonoBehaviour
         {
             healthPoint = minHp;
         }
+        //最低値、最高値を超えたら修正
+        if (cigarettesPoint > maxHp)
+        {
+            cigarettesPoint = maxHp;
+        }
+        else if (cigarettesPoint < minHp)
+        {
+            cigarettesPoint = minHp;
+        }
 
 
         happyHp = happyPoint;
         healthHp = healthPoint;
+        cigarettesHp = cigarettesPoint;
 
 
         slider.value = (float)currentHp / (float)maxHp; ;
         happySlider.value = (float)happyHp / (float)maxHp; ;
         healthSlider.value = (float)healthHp / (float)maxHp; ;
+        cigarettesSlider.value = (float)cigarettesHp / (float)maxHp; ;
     }
 }

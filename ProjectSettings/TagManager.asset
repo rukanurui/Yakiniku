@@ -8,6 +8,10 @@ TagManager:
   - Sara
   - Food_kyabetu
   - Food_Karubi
+  - Food_horumon
+  - Food_pi-man
+  - Food_kabocha
+  - Food_tori
   layers:
   - Default
   - TransparentFX
