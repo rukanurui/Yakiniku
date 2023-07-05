@@ -77,99 +77,99 @@ public class Gage : MonoBehaviour
         //tagの中に含まれる対応した名前でスコア変化
         if(name.Contains("Karubi") && firelevel == 2)//肉　ウェルダン
         {
-            point += 50;
+            point += 15;
             happyPoint += 25;
             healthPoint -= 10;
 
-            score += 3;
+            score += 50;
         }
         else if(name.Contains("Karubi") && firelevel == 3)//肉 焦げ肉
         {
-            point += 25;
-            happyPoint += 5;
+            point += 5;
+            happyPoint -= 10;
             healthPoint -= 20;
 
-            score += 3;
+            score += 25;
         }
         else if(name.Contains("kyabetu") && firelevel == 2)//野菜　ウェルダン
         {
-            point += 25;
-            happyPoint -= 10;
-            healthPoint += 25;
+            point += 10;
+            happyPoint -= 15;
+            healthPoint += 20;
 
-            score += 3;
+            score += 25;
         }
         else if (name.Contains("kyabetu") && firelevel == 3)//野菜　焦げ
         {
-            point += 15;
-            happyPoint -= 20;
-            healthPoint += 15;
+            point += 5;
+            happyPoint -= 15;
+            healthPoint += 0;
 
-            score += 3;
+            score -= 5;
         }
         else if (name.Contains("kabocha") && firelevel == 2)//かぼちゃ　ウェルダン
         {
-            point += 25;
+            point += 10;
             happyPoint -= 10;
-            healthPoint += 25;
+            healthPoint += 15;
 
-            score += 3;
+            score += 15;
         }
         else if (name.Contains("kabocha") && firelevel == 3)//かぼちゃ　焦げ
         {
-            point += 15;
+            point += 5;
             happyPoint -= 20;
-            healthPoint += 15;
+            healthPoint += 0;
 
-            score += 3;
+            score -= 5;
         }
         else if (name.Contains("pi-man") && firelevel == 2)//ぴーまん　ウェルダン
         {
-            point += 25;
-            happyPoint -= 10;
-            healthPoint += 25;
+            point += 10;
+            happyPoint -= 15;
+            healthPoint += 20;
 
-            score += 3;
+            score += 5;
         }
         else if (name.Contains("pi-man") && firelevel == 3)//ぴーまん　焦げ
         {
-            point += 15;
-            happyPoint -= 20;
-            healthPoint += 15;
+            point += 5;
+            happyPoint -= 30;
+            healthPoint += 0;
 
-            score += 3;
+            score -= 5;
         }
         else if (name.Contains("horumon") && firelevel == 2)//ホルモン　ウェルダン
         {
-            point += 25;
-            happyPoint -= 10;
-            healthPoint += 25;
+            point += 15;
+            happyPoint += 20;
+            healthPoint -= 15;
 
-            score += 3;
+            score += 40;
         }
         else if (name.Contains("horumon") && firelevel == 3)//ホルモン　焦げ
         {
-            point += 15;
+            point += 5;
             happyPoint -= 20;
-            healthPoint += 15;
+            healthPoint -= 25;
 
-            score += 3;
+            score += 20;
         }
         else if (name.Contains("tori") && firelevel == 2)//鳥　ウェルダン
         {
-            point += 25;
-            happyPoint -= 10;
-            healthPoint += 25;
+            point += 15;
+            happyPoint += 15;
+            healthPoint -= 5;
 
-            score += 3;
+            score += 25;
         }
         else if (name.Contains("tori") && firelevel == 3)//鳥　焦げ
         {
-            point += 15;
-            happyPoint -= 20;
-            healthPoint += 15;
+            point += 5;
+            happyPoint -= 10;
+            healthPoint -= 10;
 
-            score += 3;
+            score += 15;
         }
         else
         {
