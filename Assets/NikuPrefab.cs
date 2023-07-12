@@ -30,7 +30,7 @@ public class NikuPrefab : MonoBehaviour
             {
                 //乱数
                 System.Random myObject = new System.Random();
-                foodRand = UnityEngine.Random.Range(1, 3); ;
+                foodRand = UnityEngine.Random.Range(1, 7); ;
 
                 //乱数で選択された方を生成
                 if (foodRand == 1)
@@ -41,11 +41,43 @@ public class NikuPrefab : MonoBehaviour
                     // Cubeプレハブを元に、インスタンスを生成、
                     Instantiate(obj, new Vector3(2.2f,2.5f, -7.0f), Quaternion.identity);
                 }
-                else
+                else if(foodRand==2)
                 {
                     // Do anything
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("Yasai");
+                    // Cubeプレハブを元に、インスタンスを生成、
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                }
+                else if (foodRand == 3)
+                {
+                    // Do anything
+                    // CubeプレハブをGameObject型で取得
+                    GameObject obj = (GameObject)Resources.Load("tori");
+                    // Cubeプレハブを元に、インスタンスを生成、
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                }
+                else if (foodRand == 4)
+                {
+                    // Do anything
+                    // CubeプレハブをGameObject型で取得
+                    GameObject obj = (GameObject)Resources.Load("kabocha");
+                    // Cubeプレハブを元に、インスタンスを生成、
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                }
+                else if (foodRand == 5)
+                {
+                    // Do anything
+                    // CubeプレハブをGameObject型で取得
+                    GameObject obj = (GameObject)Resources.Load("pi-man");
+                    // Cubeプレハブを元に、インスタンスを生成、
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                }
+                else
+                {
+                    // Do anything
+                    // CubeプレハブをGameObject型で取得
+                    GameObject obj = (GameObject)Resources.Load("horumon");
                     // Cubeプレハブを元に、インスタンスを生成、
                     Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
                 }

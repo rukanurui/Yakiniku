@@ -34,6 +34,8 @@ public class Gage : MonoBehaviour
     public float cigarettesPoint;
 
 
+    public bool cigarettesFever;
+
     public static float score = 0;
     public static int pointLostTime = 0;
    // public string name;
@@ -66,6 +68,8 @@ public class Gage : MonoBehaviour
         happyHp = 50;
         healthHp = 50;
         pointLostTime = 0;
+
+        cigarettesFever = false;
         Debug.Log("Start currentHp : " + currentHp);
     }
 
@@ -211,7 +215,18 @@ public class Gage : MonoBehaviour
             pointLostTime = 0;
         }
 
+        //‚½‚Î‚±point‚ª•S‚É‚È‚Á‚½‚çfever
+        if(cigarettesPoint>=100)
+        {
+            cigarettesFever = true;
+        }
 
+
+        //fever’†‚Ì‚Ìˆ—
+        if (cigarettesFever == true)
+        {
+            cigarettesPoint -= 0.05f;
+        }
 
         currentHp = point;
 
