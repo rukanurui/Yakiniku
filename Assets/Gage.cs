@@ -81,7 +81,7 @@ public class Gage : MonoBehaviour
         //tagの中に含まれる対応した名前でスコア変化
         if(name.Contains("Karubi") && firelevel == 2)//肉　ウェルダン
         {
-            point += 15;
+            if (cigarettesFever == true) point += 15;
             happyPoint += 25;
             healthPoint -= 10;
 
@@ -89,7 +89,7 @@ public class Gage : MonoBehaviour
         }
         else if(name.Contains("Karubi") && firelevel == 3)//肉 焦げ肉
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 10;
             healthPoint -= 20;
 
@@ -97,7 +97,7 @@ public class Gage : MonoBehaviour
         }
         else if(name.Contains("kyabetu") && firelevel == 2)//野菜　ウェルダン
         {
-            point += 10;
+            if (cigarettesFever == true) point += 10;
             happyPoint -= 15;
             healthPoint += 20;
 
@@ -105,7 +105,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("kyabetu") && firelevel == 3)//野菜　焦げ
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 15;
             healthPoint += 0;
 
@@ -113,7 +113,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("kabocha") && firelevel == 2)//かぼちゃ　ウェルダン
         {
-            point += 10;
+            if (cigarettesFever == true) point += 10;
             happyPoint -= 10;
             healthPoint += 15;
 
@@ -121,7 +121,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("kabocha") && firelevel == 3)//かぼちゃ　焦げ
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 20;
             healthPoint += 0;
 
@@ -129,7 +129,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("pi-man") && firelevel == 2)//ぴーまん　ウェルダン
         {
-            point += 10;
+            if (cigarettesFever == true) point += 10;
             happyPoint -= 15;
             healthPoint += 20;
 
@@ -137,7 +137,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("pi-man") && firelevel == 3)//ぴーまん　焦げ
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 30;
             healthPoint += 0;
 
@@ -145,7 +145,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("horumon") && firelevel == 2)//ホルモン　ウェルダン
         {
-            point += 15;
+            if (cigarettesFever == true) point += 15;
             happyPoint += 20;
             healthPoint -= 15;
 
@@ -153,7 +153,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("horumon") && firelevel == 3)//ホルモン　焦げ
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 20;
             healthPoint -= 25;
 
@@ -161,7 +161,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("tori") && firelevel == 2)//鳥　ウェルダン
         {
-            point += 15;
+            if (cigarettesFever == true) point += 15;
             happyPoint += 15;
             healthPoint -= 5;
 
@@ -169,7 +169,7 @@ public class Gage : MonoBehaviour
         }
         else if (name.Contains("tori") && firelevel == 3)//鳥　焦げ
         {
-            point += 5;
+            if (cigarettesFever == true) point += 5;
             happyPoint -= 10;
             healthPoint -= 10;
 
@@ -177,7 +177,7 @@ public class Gage : MonoBehaviour
         }
         else
         {
-            point += 10;
+            if (cigarettesFever == true) point += 10;
             happyPoint += 10;
             healthPoint -= 5;
 
@@ -195,12 +195,19 @@ public class Gage : MonoBehaviour
         point -= 1.0f;
         currentHp -= 1.0f;
     }
-
-
+ 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            cigarettesPoint += 0.5f;
+
+            cigarettesHp += 0.5f;
+        }
+
         // 空腹が０だとカウントダウン始まる
-        if(point<=0)
+        if (point<=0)
         {
             pointLostTime += 1;
             //カウントダウンが終わるとゲーム終了
@@ -225,8 +232,20 @@ public class Gage : MonoBehaviour
         //fever中の時の処理
         if (cigarettesFever == true)
         {
+            //true中は溜まったポイントを消費する
             cigarettesPoint -= 0.05f;
+
+            //フィーバー中は健康度が減る
+            healthPoint -= 0.01f;
+
+            //pointが0になったらフラグを0にする
+            if(cigarettesPoint<=0)
+            {
+                cigarettesFever = false;
+            }
         }
+
+
 
         currentHp = point;
 
