@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
+    AudioSource audioSource;
 
     [SerializeField] Material[] materialArray = new Material[3];
     public enum fireLevel
@@ -35,9 +36,14 @@ public class Fire : MonoBehaviour
             {
                 firecount += 1.0f;
                 Instantiate(ParticleKemuri,this.transform.position,Quaternion.identity);
+                
+                audioSource = GetComponent<AudioSource>();
+                audioSource.Play();
             }
             else
             {
+                //audioSource = this.GetComponent<AudioSource>();
+                //audioSource.Stop();
                 //ParticleKemuri.SetActive(false);
             }
 

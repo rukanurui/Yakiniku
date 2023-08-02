@@ -18,7 +18,7 @@ public class ResultScore : MonoBehaviour
 
         //çáéZÇµÇΩScoreÇÕFloatå^ÇÃÇΩÇﬂIntå^Ç…ïœä∑Ç∑ÇÈ
         IntScore = (int)Math.Ceiling(score);
-        ScoreText.text = string.Format("Score:{0}", IntScore);
+        ScoreText.text = string.Format("{0}", IntScore);
     }
 
     // Update is called once per frame
