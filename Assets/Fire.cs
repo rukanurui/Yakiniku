@@ -41,7 +41,7 @@ public class Fire : MonoBehaviour
                 //ParticleKemuri.SetActive(false);
             }
 
-            if (firecount >= 240)
+            if (firecount >= 480)
             {
                 level++;
                 firecount = 0;
@@ -61,7 +61,7 @@ public class Fire : MonoBehaviour
 
         if (level== fireLevel.WELLDONE)
         {
-            GetComponent<MeshRenderer>().material = materialArray[1];
+                 GetComponent<MeshRenderer>().material = materialArray[1];
         }
 
         if (level == fireLevel.KOGE)

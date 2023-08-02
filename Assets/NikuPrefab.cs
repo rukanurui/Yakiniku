@@ -39,7 +39,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("niku2");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f,2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f,2.5f, -7.3f), new Quaternion(0.0f,180.0f,0.0f,1.0f));
                 }
                 else if(foodRand==2)
                 {
@@ -47,7 +47,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("Yasai");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.3f), new Quaternion(0.0f, 180.0f, 0.0f, 0.0f));
                 }
                 else if (foodRand == 3)
                 {
@@ -55,7 +55,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("tori");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.3f), new Quaternion(0.0f, 180.0f, 0.0f, 0.0f));
                 }
                 else if (foodRand == 4)
                 {
@@ -63,7 +63,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("kabocha");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.3f), new Quaternion(0.0f, 180.0f, 0.0f, 0.0f));
                 }
                 else if (foodRand == 5)
                 {
@@ -71,7 +71,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("pi-man");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.3f), new Quaternion(0.0f, 180.0f, 0.0f, 0.0f));
                 }
                 else
                 {
@@ -79,7 +79,7 @@ public class NikuPrefab : MonoBehaviour
                     // CubeプレハブをGameObject型で取得
                     GameObject obj = (GameObject)Resources.Load("horumon");
                     // Cubeプレハブを元に、インスタンスを生成、
-                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.0f), Quaternion.identity);
+                    Instantiate(obj, new Vector3(2.2f, 2.5f, -7.3f), new Quaternion(0.0f, 180.0f, 0.0f, 0.0f));
                 }
                 foodTime = 0;
             }
